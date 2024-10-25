@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <!-- Google Fonts Pre Connect -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts Links (Roboto 400, 500 and 700 included) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+    <!-- CSS Files Links -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Title -->
+    <title>Example 2.1: The HTML5 Canvas Project</title>
+    <link rel="icon" type="imge/x-icon" href="img/favicon.png"
+
+</head>
+<body>
+  <header>
+    <h1>Example 2.1: The HTML5 Canvas Project</h1>
+  </header>
+
+  <main>
+    <canvas id="GLCanvas" width="640" height="480">
+        Your browser does not support the HTML5 canvas.
+    </canvas>
+     <!-- everything in-between the <script> tag is javascript -->
+        <script type="text/javascript">
+            "use strict";  // Operate in Strict mode such that variables must be declared before used!
+
+            // Begin of code execution
+            
+            // Thanks to Arsen Mazmanyan (Birdman1104 @github) for pointing out that experimental-webgl2 has been deprecated
+            // Get the webgl and binds to the Canvas area 
+            let canvas = document.getElementById("GLCanvas");
+
+            // Get standard webgl2
+            // binds webgl2 to the Canvas area on the web-page to the variable "gl"
+            // "gl" will be the context upon which we access all webGL2 functionality
+            let gl = canvas.getContext("webgl2");
+
+            if (gl !== null) {
+                gl.clearColor(0.0, 0.8, 0.0, 1.0);  // set the color to be cleared
+                gl.clear(gl.COLOR_BUFFER_BIT);      // clear the colors
+            }
+            document.write("<br><b>The above is WebGL draw area!</b>");
+        </script>
+  </main>
+
+  <footer>
+    <p>Example 2.1: The HTML5 Canvas Project</p>
+  </footer>
+  <noscript>Your browser doesn't support JavaScript!</noscript>
+</body>
+</html>
